@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Park Pulse smart parking dashboard" />
+    <title>Park Pulse | Smart Parking</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Park Pulse home"><span class="brand-mark">P</span><span>Park Pulse</span></a>
+      <div class="clock" aria-live="polite"><span id="date"></span><strong id="time"></strong></div>
+    </header>
+
+    <main id="top" class="page-shell">
+      <section class="hero" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">SMART CITY PARKING</p>
+          <h1 id="page-title">A calmer way to <span>park.</span></h1>
+          <p class="hero-copy">Register once, see live availability, and reserve your space in moments.</p>
+          <div class="hero-tags"><span>● Live slots</span><span>● Simple pricing</span><span>● Instant booking</span></div>
+        </div>
+        <div class="hero-art" aria-hidden="true"><div class="road"></div><div class="car"><i></i><i></i></div><div class="pin">P</div></div>
+      </section>
+
+      <section class="stats" aria-label="Parking summary">
+        <article><span>AVAILABLE NOW</span><strong id="available-count">—</strong><small>spaces ready for you</small></article>
+        <article><span>OCCUPIED</span><strong id="occupied-count">—</strong><small>currently reserved</small></article>
+        <article><span>STARTING AT</span><strong>₹25</strong><small>per hour for bikes</small></article>
+      </section>
+
+      <div class="dashboard">
+        <section class="panel profile-panel" aria-labelledby="profile-title">
+          <div class="panel-heading"><div><p class="eyebrow">STEP 1</p><h2 id="profile-title">Your parking profile</h2></div><span class="step">01</span></div>
+          <form id="registration-form">
+            <div class="form-grid">
+              <label>Full name<input id="name" name="name" autocomplete="name" required placeholder="e.g. Ananya Sharma" /></label>
+              <label>Email address<input id="email" name="email" type="email" autocomplete="email" required placeholder="you@example.com" /></label>
+              <label>Phone number<input id="phone" name="phone" inputmode="tel" autocomplete="tel" required placeholder="98765 43210" /></label>
+              <label>Vehicle number<input id="vehicle-number" name="vehicleNumber" required placeholder="DL 01 AB 1234" /></label>
+            </div>
+            <fieldset><legend>Vehicle type</legend><div class="vehicle-options">
+              <label><input type="radio" name="vehicleType" value="Car" checked /> <span>🚗 Car <small>₹50/hr</small></span></label>
+              <label><input type="radio" name="vehicleType" value="Bike" /> <span>🏍️ Bike <small>₹25/hr</small></span></label>
+              <label><input type="radio" name="vehicleType" value="Scooter" /> <span>🛵 Scooter <small>₹30/hr</small></span></label>
+              <label><input type="radio" name="vehicleType" value="EV" /> <span>⚡ EV <small>₹60/hr</small></span></label>
+            </div></fieldset>
+            <button class="button" type="submit">Save profile &amp; view slots</button>
+          </form>
+          <p class="form-message" id="registration-message" role="status"></p>
+        </section>
+
+        <section class="panel booking-panel" aria-labelledby="slots-title">
+          <div class="panel-heading"><div><p class="eyebrow">STEP 2</p><h2 id="slots-title">Choose your space</h2></div><span class="step">02</span></div>
+          <div class="booking-controls"><label for="hours">Duration<select id="hours"><option value="1">1 hour</option><option value="2" selected>2 hours</option><option value="3">3 hours</option><option value="4">4 hours</option><option value="8">8 hours</option></select></label><p id="price-preview">Register to see your estimate.</p></div>
+          <div id="slot-grid" class="slot-grid" aria-live="polite"></div>
+          <p class="form-message" id="booking-message" role="status"></p>
+        </section>
+      </div>
+
+      <section class="panel bookings-panel" aria-labelledby="bookings-title">
+        <div class="panel-heading"><div><p class="eyebrow">YOUR DASHBOARD</p><h2 id="bookings-title">Current booking</h2></div><button class="text-button" id="history-button" type="button" disabled>View history</button></div>
+        <div id="current-bookings" class="empty-state">Save your profile to view your bookings.</div>
+        <div id="history" hidden><h3>Parking history</h3><div id="history-list"></div></div>
+      </section>
+
+      <section class="reliability" aria-label="Service status"><span class="online-dot"></span><span>Park Pulse systems are online</span><span>Live availability refreshes after every booking</span><a href="https://dda.gov.in/" target="_blank" rel="noreferrer">Visit DDA ↗</a></section>
+    </main>
+    <footer>© <span id="year"></span> Park Pulse · Smart parking, made simple.</footer>
+    <script src="script.js"></script>
+  </body>
+</html>
