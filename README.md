@@ -11,7 +11,12 @@ Park Pulse is a smart parking web application built with Node.js, Express, HTML,
 - Slot booking and cancellation
 - Current booking and parking-history views
 - JSON API powered by Express
+- Isolated chatbot microfrontend built as a native Web Component
 - DDA link and no image or video file dependencies
+
+## Microfrontend chatbot
+
+The support chatbot lives in `public/microfrontends/chatbot.js`. It is a self-contained Web Component with its own markup, styling, lifecycle, and read-only live-slot API call. This keeps it separate from the parking dashboard and lets it be reused or independently developed later.
 
 ## Run locally
 
