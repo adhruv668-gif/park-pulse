@@ -149,4 +149,4 @@ app.use((err, _req, res, _next) => {
   res.status(500).json({ error: 'Something went wrong. Please try again.' });
 });
 
-app.listen(PORT, () => console.log(`Park Pulse is running at http://localhost:${PORT}`));
+app.listen(PORT, '0.0.0.0', () => console.log(`Park Pulse is running at http://localhost:${PORT}`));
